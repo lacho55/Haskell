@@ -14,40 +14,40 @@ main = do
 
 
     -- Упражнение 3: n-торки
-    --print a       -- -> (1,2)
-    --print b       -- -> (1,2.3,4.5)
+    print a       -- -> (1,2)
+    print b       -- -> (1,2.3,4.5)
 
     -- може да достъпваме първи и втори елемент с fst и snd съответно (само при двойки)
-    --print (fst a) -- -> 1
-    --print (snd a) -- -> 2
-    --print (fst b) -- Couldn't match expected type `(a0, b0)' with actual type `(Int, Float, Float)'
+    print (fst a) -- -> 1
+    print (snd a) -- -> 2
+    print (fst b) -- Couldn't match expected type `(a0, b0)' with actual type `(Int, Float, Float)'
  
     -- може да ги сравняваме с ==, но само ако са с еднаква дължина и типове
-    --print ((1,2) == (1,2)) -- -> True
-    --print ((1,2) == (1,1)) -- -> False
-    --print ((1,2,3) == (1,2)) -- error: Couldn't match expected type `(Integer, Integer, Integer)' with actual type `(Integer, Integer)'
+    print ((1,2) == (1,2)) -- -> True
+    print ((1,2) == (1,1)) -- -> False
+    print ((1,2,3) == (1,2)) -- error: Couldn't match expected type `(Integer, Integer, Integer)' with actual type `(Integer, Integer)'
  
-    --print grade1 -- -> ("John","Algebra",4.75)
-    --print grade2 -- -> ("Jane","Geometry",5.25)
+    print grade1 -- -> ("John","Algebra",4.75)
+    print grade2 -- -> ("Jane","Geometry",5.25)
     
  
-    --print (addPair (3,4)) -- -> 7
-    --print (addPair' (3,4))
+    print (addPair (3,4)) -- -> 7
+    print (addPair' (3,4))
  
-    --print (divide 7 2) -- -> (3,1)
+    print (divide 7 2) -- -> (3,1)
 
-    --print (sumVectors   (1, 1, 1) (2, 3, 5)) -- -> (3.0,4.0,6.0)
-    --print (scaleVector  (2, 3, 5) 3)         -- -> (6.0,9.0,15.0)
-    --print (dotProduct   (1, 1, 1) (2, 3, 5)) -- -> 10.0
-    --print (crossProduct (1, 1, 1) (2, 3, 5)) -- -> (2.0,-3.0,1.0)
-    --print (magnitude    (1, 1, 1))           -- -> 1.7320508075688772
+    print (sumVectors   (1, 1, 1) (2, 3, 5)) -- -> (3.0,4.0,6.0)
+    print (scaleVector  (2, 3, 5) 3)         -- -> (6.0,9.0,15.0)
+    print (dotProduct   (1, 1, 1) (2, 3, 5)) -- -> 10.0
+    print (crossProduct (1, 1, 1) (2, 3, 5)) -- -> (2.0,-3.0,1.0)
+    print (magnitude    (1, 1, 1))           -- -> 1.7320508075688772
 
-    --print (sumRat (1,2) (3,2))      -- -> (8,4)
-    --print (sumRat' (1,2) (3,2))     -- -> (8,4)
-    --print (multiplyRat (1,2) (4,5)) -- -> (4,10)
-    --print (divideRat (1,2) (4,5))   -- -> (5,8)
-    --print (normalizeRat (500,1025)) -- -> (20,41)
-    --print (sumRatNorm (1,2) (3,2))  -- -> (2,1)
+    print (sumRat (1,2) (3,2))      -- -> (8,4)
+    print (sumRat' (1,2) (3,2))     -- -> (8,4)
+    print (multiplyRat (1,2) (4,5)) -- -> (4,10)
+    print (divideRat (1,2) (4,5))   -- -> (5,8)
+    print (normalizeRat (500,1025)) -- -> (20,41)
+    print (sumRatNorm (1,2) (3,2))  -- -> (2,1)
 
 
 
