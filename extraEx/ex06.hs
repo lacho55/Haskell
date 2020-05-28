@@ -30,7 +30,7 @@ rs = [r1,r2,r3,r4,r5,r6,r7]
 
 hardestSubject :: [Record] -> Subject
 hardestSubject [] = error "There are no records!"
-hardestSubject recList@(record1@(stName, suName, suGrade) : xs) = smallestGrade(gradesPerSubject recList)
+hardestSubject recList = smallestGrade(gradesPerSubject recList)
     where
         subjectNames = nub [name | (_, name, _) <- recList]
 
