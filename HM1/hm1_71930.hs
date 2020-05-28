@@ -34,7 +34,6 @@ findSum a b n --The main thing about this task is to use the previous calculatio
             | (i > n - 3) = findSumHelper (current + (2^i * b)) (i + 1) (sum + current)
 
 
-
 --TASK02
 isSquare :: Int -> Bool
 isSquare x --Our main function which returns True and False when x is 0 or 1 and calls isSquareHelper in the other situations
