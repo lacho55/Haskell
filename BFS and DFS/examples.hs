@@ -21,6 +21,9 @@ traverseBF tree = tbf [tree]
         leftAndRightNodes (Node _ a Empty)     = [a]
         leftAndRightNodes (Node _ a b)         = [a,b]
 
+subTrees :: BTree a -> [BTree a]
+subTrees    Empty         = []
+subTrees t@(Node _ l r) = t : (subTrees l ++ subTrees r)
 
 createTree = Node 'A'
                 (Node 'B'
