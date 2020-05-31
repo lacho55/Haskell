@@ -6,3 +6,4 @@ main = do
 qSort :: [Int] -> [Int]
 qSort [] = []
 qSort (x: xs) = [y | y <- xs, y <= x] ++ [x] ++ qSort [y | y <- xs, y > x]
+
