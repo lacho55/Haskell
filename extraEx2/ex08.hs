@@ -18,8 +18,8 @@ count1 = [(Country "France" "Paris" [(City "Verdun" 2 4), (City "Paris" 2 2)]),
 highestCapital :: [Country] -> Name
 highestCapital allCountries = capWithMaxHight
     where
-        listOfCapsAndEls =  [(capName, citEl) | (Country _ capName listCities) <- allCountries, (City citName citEl _) <- listCities, capName == citName]
-        maxHight = maximum [ x | (_,x) <- listOfCapsAndEls]
-        capWithMaxHight = head [ x | (x, y) <- listOfCapsAndEls, y == maxHight]
+        listOfCapsAndEls =  [(countName, capName, citEl) | (Country countName capName listCities) <- allCountries, (City citName citEl _) <- listCities, capName == citName]
+        maxHight = maximum [ x | (_, _,x) <- listOfCapsAndEls]
+        capWithMaxHight = head [ x | (x, y, z) <- listOfCapsAndEls, z == maxHight]
 
 
