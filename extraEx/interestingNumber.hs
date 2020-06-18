@@ -1,6 +1,6 @@
 main::IO()
 main = do
-    print(interestNum 410)
+    print(sumDigits 410)
 
 interestNum :: Int -> Bool
 interestNum n = n `mod` sumDigits n == 0

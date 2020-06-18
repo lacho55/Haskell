@@ -1,6 +1,7 @@
+import Data.List(nub)
 main :: IO()
 main = do
-    print(1)
+    print(coldestCapital count1)
 
 
 type Name = String
@@ -10,12 +11,23 @@ type Elevation = Int
 data City = City Name Elevation AvgYearlyTemperature deriving (Read, Show)
 data Country = Country Name Capital [City] deriving (Read,Show)
 
+count1 :: [Country]
+count1 = [(Country "France" "Paris" [(City "Verdun" 2 4), (City "Paris" 2 2)]),
+          (Country "Germany" "Berlin" [(City "Baden Baden" 1 1), (City "Berlin" 1 1)])]
+
 coldestCapital :: [Country] -> Name
+coldestCapital [] = error "There is no country!"
+coldestCapital allCountries@( (Country name cap ((City cityName cityEv cityAbg) : cities) )   : otherCountries) = capWithMinTemp
+    where
+        listOfCapsAndTemps =  [(capName, citAvg) | (Country _ capName listCities) <- allCountries, (City citName _  citAvg) <- listCities, capName == citName]
+        minTemp = minElem [temp | (_, temp) <- listOfCapsAndTemps] 
+        capWithMinTemp = head [ x | (x, y) <- listOfCapsAndTemps, y == minTemp]
 
 
-
-
-
---Дефинирайте функция coldestCapital :: [Country] -> Name, която получава като аргумент списък
---от държави и връща като резултат името на държавата от списъка с най-студена столица
---(столица с най-ниска средногодишна температура).
+minElem::[Double]->Double
+minElem [] = 0
+minElem [x] = x
+minElem (x:y:xs) 
+ |x > y = minElem (y:xs)
+ |x <= y = minElem (x:xs)
+ |x == y = minElem (x:xs)
