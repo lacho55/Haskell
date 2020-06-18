@@ -17,7 +17,7 @@ count1 = [(Country "France" "Paris" [(City "Verdun" 2 4), (City "Paris" 2 2)]),
 
 coldestCapital :: [Country] -> Name
 coldestCapital [] = error "There is no country!"
-coldestCapital allCountries@( (Country name cap ((City cityName cityEv cityAbg) : cities) )   : otherCountries) = capWithMinTemp
+coldestCapital allCountries = capWithMinTemp
     where
         listOfCapsAndTemps =  [(capName, citAvg) | (Country _ capName listCities) <- allCountries, (City citName _  citAvg) <- listCities, capName == citName]
         minTemp = minElem [temp | (_, temp) <- listOfCapsAndTemps] 
