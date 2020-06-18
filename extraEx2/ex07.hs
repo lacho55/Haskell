@@ -19,7 +19,7 @@ coldestCapital :: [Country] -> Name
 coldestCapital [] = error "There is no country!"
 coldestCapital allCountries = capWithMinTemp
     where
-        listOfCapsAndTemps =  [(capName, citAvg) | (Country _ capName listCities) <- allCountries, (City citName _  citAvg) <- listCities, capName == citName]
-        minTemp = minimum [temp | (_, temp) <- listOfCapsAndTemps] 
-        capWithMinTemp = head [ x | (x, y) <- listOfCapsAndTemps, y == minTemp]
+        listOfCapsAndTemps =  [(countName, capName, citAvg) | (Country countName capName listCities) <- allCountries, (City citName _  citAvg) <- listCities, capName == citName]
+        minTemp = minimum [temp | (_, _, temp) <- listOfCapsAndTemps] 
+        capWithMinTemp = head [ x | (x, y,z) <- listOfCapsAndTemps, z == minTemp]
 
